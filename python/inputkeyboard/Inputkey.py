@@ -1,4 +1,4 @@
-import sys, tty, termios, time
+import sys, tty, termios
 
 class _Getch:
     def __call__(self):
