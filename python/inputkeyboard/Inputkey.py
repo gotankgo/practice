@@ -1,4 +1,4 @@
-import sys, tty, termios, time
+import sys, tty, termios
 
 class _Getch:
     def __call__(self, a):
@@ -15,22 +15,14 @@ class _Getch:
         return ch
 
 
-def get():
-    while True:
-        raw_key = _Getch()        
-        while True:
-            input_key = raw_key(1)
-            if input_key != '':
-                break
-
-        return input_key
 
 def arrow_get():
     ARROW_KEY = {
         '\x1b[A'        :'up',
         '\x1b[B'        :'down',
         '\x1b[C'        :'right',
-        '\x1b[D'        :'left'
+        '\x1b[D'        :'left',
+        '\x1b\x1b\x1b'  :'esc'
     }
 
     while True:
@@ -47,3 +39,17 @@ def arrow_get():
             return ARROW_KEY.get(input_key)
         else:
             continue
+
+
+def get():
+    while True:
+        raw_key = _Getch()        
+        while True:
+            input_key = raw_key(1)
+            if input_key != '':
+                break
+
+        return input_key
+
+        
+    
