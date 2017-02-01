@@ -1,11 +1,14 @@
 import Inputkey
 
-key = Inputkey.get()
+ARROW = 3
+NOMAL = 1
+
+key = Inputkey.get(NOMAL)
 if 27 == ord(key):
     exit()
 
 while True:
-    key = Inputkey.arrow_get()
+    key = Inputkey.get(ARROW)
     if key == 'esc':
         exit()
     else:
