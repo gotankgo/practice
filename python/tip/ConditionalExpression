@@ -1,0 +1,11 @@
+# Conditional expression
+# C language
+# a ? b : c
+
+# python ?
+
+a = True
+b = 'ok'
+c = 'no'
+
+print(b if a else c) 
