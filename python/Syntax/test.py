@@ -12,3 +12,12 @@ matrix[100:300, 100:300]
  제네레이터
  피클링?
  yield
+
+ a = int(input())
+for i in range(a):
+print(i + 1)
+
+
+a = int(input())
+for i in range(1, a +1):
+print(i)
